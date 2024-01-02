@@ -6,6 +6,7 @@ import { loadBlogPost } from '@/helpers/file-helpers';
 import { BLOG_TITLE } from '@/constants';
 
 import BlogHero from '@/components/BlogHero';
+import CodeSnippet from '@/components/CodeSnippet';
 
 import styles from './postSlug.module.css';
 
@@ -28,7 +29,12 @@ async function BlogPost({ params: { postSlug } }) {
         <article className={styles.wrapper}>
             <BlogHero title={title} publishedOn={parseISO(publishedOn)} />
             <div className={styles.page}>
-                <MDXRemote source={content} />
+                <MDXRemote
+                    source={content}
+                    components={{
+                        pre: CodeSnippet
+                    }}
+                />
             </div>
         </article>
     );
