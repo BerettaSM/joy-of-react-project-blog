@@ -8,6 +8,8 @@ import { BLOG_TITLE } from '@/constants';
 import BlogHero from '@/components/BlogHero';
 import CodeSnippet from '@/components/CodeSnippet';
 
+const DivisionGroupsDemo = React.lazy(() => import('@/components/DivisionGroupsDemo'))
+
 import styles from './postSlug.module.css';
 
 export async function generateMetadata({ params: { postSlug } }) {
@@ -32,7 +34,8 @@ async function BlogPost({ params: { postSlug } }) {
                 <MDXRemote
                     source={content}
                     components={{
-                        pre: CodeSnippet
+                        pre: CodeSnippet,
+                        DivisionGroupsDemo
                     }}
                 />
             </div>
