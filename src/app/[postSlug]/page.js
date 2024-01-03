@@ -2,7 +2,7 @@ import React from 'react';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { parseISO } from 'date-fns';
 
-import { loadBlogPost } from '@/helpers/file-helpers';
+import { loadBlogPost } from '@/helpers/cached-helpers';
 import { BLOG_TITLE } from '@/constants';
 
 import BlogHero from '@/components/BlogHero';

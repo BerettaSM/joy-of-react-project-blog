@@ -7,7 +7,7 @@ import clsx from 'clsx';
 
 import { cookies } from 'next/headers';
 
-import { LIGHT_TOKENS, DARK_TOKENS, BLOG_TITLE } from '@/constants';
+import { LIGHT_TOKENS, DARK_TOKENS, BLOG_TITLE, BLOG_DESCRIPTION } from '@/constants';
 
 import MotionProvider from '@/components/MotionProvider';
 import Header from '@/components/Header';
@@ -29,7 +29,7 @@ const monoFont = Spline_Sans_Mono({
 
 export const metadata = {
     title: BLOG_TITLE,
-    description: 'A wonderful blog about JavaScript'
+    description: BLOG_DESCRIPTION
 }
 
 function RootLayout({ children }) {

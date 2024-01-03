@@ -15,14 +15,16 @@ function Header({ theme, className, ...delegated }) {
 
             <div className={styles.actions}>
                 <button className={styles.action}>
-                    <Rss
-                        size="1.5rem"
-                        style={{
-                            // Optical alignment
-                            transform: 'translate(2px, -2px)',
-                        }}
-                    />
-                    <VisuallyHidden>View RSS feed</VisuallyHidden>
+                    <a href="/rss.xml" target='_blank'>
+                        <Rss
+                            size="1.5rem"
+                            style={{
+                                // Optical alignment
+                                transform: 'translate(2px, -2px)',
+                            }}
+                        />
+                        <VisuallyHidden>View RSS feed</VisuallyHidden>
+                    </a>
                 </button>
                 <DarkLightToggle
                     initialTheme={theme}
