@@ -8,7 +8,8 @@ import { BLOG_TITLE } from '@/constants';
 import BlogHero from '@/components/BlogHero';
 import CodeSnippet from '@/components/CodeSnippet';
 
-const DivisionGroupsDemo = React.lazy(() => import('@/components/DivisionGroupsDemo'))
+const DivisionGroupsDemo = React.lazy(() => import('@/components/DivisionGroupsDemo'));
+const CircularColorsDemo = React.lazy(() => import('@/components/CircularColorsDemo'));
 
 import styles from './postSlug.module.css';
 
@@ -35,7 +36,8 @@ async function BlogPost({ params: { postSlug } }) {
                     source={content}
                     components={{
                         pre: CodeSnippet,
-                        DivisionGroupsDemo
+                        DivisionGroupsDemo,
+                        CircularColorsDemo
                     }}
                 />
             </div>
