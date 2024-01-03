@@ -5,6 +5,8 @@ import {
 } from 'next/font/google';
 import clsx from 'clsx';
 
+import { cookies } from 'next/headers';
+
 import { LIGHT_TOKENS, DARK_TOKENS, BLOG_TITLE } from '@/constants';
 
 import MotionProvider from '@/components/MotionProvider';
@@ -31,22 +33,21 @@ export const metadata = {
 }
 
 function RootLayout({ children }) {
-  // TODO: Dynamic theme depending on user preference
-  const theme = 'light';
+  const theme = cookies().get('color-theme')?.value || 'light';
 
   return (
     <MotionProvider>
         <html
-        lang="en"
-        className={clsx(mainFont.variable, monoFont.variable)}
-        data-color-theme={theme}
-        style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
+            lang="en"
+            className={clsx(mainFont.variable, monoFont.variable)}
+            data-color-theme={theme}
+            style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
         >
-        <body>
-            <Header theme={theme} />
-            <main>{children}</main>
-            <Footer />
-        </body>
+            <body>
+                <Header theme={theme} />
+                <main>{children}</main>
+                <Footer />
+            </body>
         </html>
     </MotionProvider>
   );
